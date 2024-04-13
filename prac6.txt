@@ -1,0 +1,82 @@
+activity_main.xml-
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:id="@+id/main"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity">
+ <TextView
+ android:layout_width="174dp"
+ android:layout_height="35dp"
+ android:background="@color/bluish"
+ android:text="@string/app_name"
+ android:gravity="center"
+ android:textColor="@color/yellowish"
+ android:textSize="22dp"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintHorizontal_bias="0.505"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.06" />
+ <TextView
+ android:layout_width="116dp"
+ android:layout_height="30dp"
+ android:background="@color/brownish"
+ android:text="@string/rollnumber"
+ android:textAlignment="center"
+ android:textColor="@color/cyanish"
+ android:textSize="22dp"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintHorizontal_bias="0.499"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.122" />
+ <Button
+ android:id="@+id/btn1"
+ android:layout_width="145dp"
+ android:layout_height="66dp"
+ android:text="@string/btn1"
+ android:textSize="22dp"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.84" />
+ <Button
+ android:id="@+id/btn2"
+ android:layout_width="136dp"
+ android:layout_height="71dp"
+ android:text="@string/btn2"
+ android:textSize="22dp"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintHorizontal_bias="0.504"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.953" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+string.xml
+<resources>
+ <string name="app_name">Sonu Kushwaha</string>
+ <string name="rollnumber">239652</string>
+ <string name="btn1">Hello!!!</string>
+ <string name="btn2">Bye!</string>
+</resources>
+
+
+color.xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#2E84C5</color>
+    <color name="yellow">#e8d100</color>
+    <color name="brown">#5e1c04</color>
+    <color name="cyan">#7dfdff</color>
+</resources>

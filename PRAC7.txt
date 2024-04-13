@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:id="@+id/main"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity">
+ <EditText
+ android:id="@+id/num1"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:hint="Enter first number"
+ android:textSize="22dp"
+ tools:ignore="MissingConstraints" />
+ <EditText
+ android:id="@+id/num2"
+ android:layout_below="@+id/num1"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:hint="Enter second number"
+ android:textSize="22dp"
+ tools:ignore="MissingConstraints" />
+ <Button
+ android:id="@+id/add"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_below="@+id/num2"
+ android:textSize="23dp"
+ android:text="+"
+ />
+ <Button
+ android:id="@+id/sub"
+ android:layout_toRightOf="@+id/add"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_below="@+id/num2"
+ android:textSize="23dp"
+ android:text="-"
+ />
+ <Button
+ android:id="@+id/div"
+ android:layout_toRightOf="@+id/sub"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_below="@+id/num2"
+ android:textSize="23dp"
+ android:text="/"
+ />
+ <Button
+ android:id="@+id/mul"
+ android:layout_toRightOf="@+id/div"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_below="@+id/num2"
+ android:textSize="23dp"
+ android:text="*"
+ />
+ <TextView
+ android:id="@+id/result"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text=""
+ android:textSize="25dp"
+ android:layout_below="@+id/add"
+ />
+</RelativeLayout>
+
+KT
+
+package com.example.pract7_calc
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        val a = findViewById<EditText>(R.id.num1)
+        val b = findViewById<EditText>(R.id.num2)
+        val addBtn = findViewById<Button>(R.id.add)
+        val subBtn = findViewById<Button>(R.id.sub)
+        val mulBtn = findViewById<Button>(R.id.mul)
+        val divBtn = findViewById<Button>(R.id.div)
+        val result = findViewById<TextView>(R.id.result)
+
+        addBtn.setOnClickListener{
+            val a1 = a.text.toString().toInt();
+            val b2 = b.text.toString().toInt();
+            val sum = a1+b2;
+
+            result.text=sum.toString()
+        }
+        subBtn.setOnClickListener {
+            val a1 = a.text.toString().toInt()
+            val b2 = b.text.toString().toInt()
+            val diff = a1 - b2
+            result.text = diff.toString()
+        }
+
+        mulBtn.setOnClickListener {
+            val a1 = a.text.toString().toInt()
+            val b2 = b.text.toString().toInt()
+            val product = a1 * b2
+            result.text = product.toString()
+        }
+
+        divBtn.setOnClickListener {
+            val a1 = a.text.toString().toDouble()
+            val b2 = b.text.toString().toDouble()
+            if (b2 != 0.0) {
+                val quotient = a1 / b2
+                result.text = quotient.toString()
+            } else {
+                result.text = "Cannot divide by zero"
+            }
+        }
+
+
+
+    }
+}
